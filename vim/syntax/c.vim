@@ -524,7 +524,7 @@ syn match    cCustomType     "\<t_[a-zA-Z_0-9]*\|[a-zA-Z_0-9]*_t\>\|\<[A-Z][a-z0
 hi def link cCustomType  Type
 
 " Highlight operators
-syn match cCustomRefOp "\(&\|->\|+\|-\|*\|/\|%\|==\|<\|>\|=\|\.\)\ze[^/]"
+syn match cCustomRefOp "\(&\|->\|+\|-\|*\|/\|%\|==\|<\|>\|=\|\.\)\ze[^/*]"
 hi def link cCustomRefOp Statement
 
 " Highlight typedef keyword
