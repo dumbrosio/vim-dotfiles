@@ -98,7 +98,7 @@ hi Tag             guifg=#F92672               gui=italic
 hi Title           guifg=#ef5939
 hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
 
-hi Typedef         guifg=#66D9EF
+hi Typedef         guifg=#66D9EF               gui=bold
 hi Type            guifg=#66D9EF               gui=none
 hi Underlined      guifg=#808080               gui=underline
 
@@ -216,7 +216,7 @@ if &t_Co > 255
    hi Title           ctermfg=166
    hi Todo            ctermfg=231 ctermbg=232   cterm=bold
 
-   hi Typedef         ctermfg=81
+   hi Typedef         ctermfg=81                cterm=bold
    hi Type            ctermfg=81                cterm=none
    hi Underlined      ctermfg=244               cterm=underline
 
@@ -284,5 +284,24 @@ end
 " Set Class and Function names color
 hi cCustomFunc ctermfg=30 guifg=#008B8B
 hi cCustomClass ctermfg=30 guifg=#008B8B
+
+" Set operators color
+hi cCustomRefOp ctermfg=140    cterm=bold
+
+" Set typedef statement color
+hi link TypeDefKeyword Statement
+hi TypeDefKeyword ctermfg=161    cterm=bold
+
+" Set structured types color
+hi link cCustomType     Type
+hi cCustomType      ctermfg=81 cterm=bold
+hi link EnumKeyword     Type
+hi EnumKeyword      ctermfg=81 cterm=bold
+hi link ArrayKeyword        Type
+hi ArrayKeyword     ctermfg=81 cterm=bold
+hi link UnionKeyword        Type
+hi UnionKeyword     ctermfg=81 cterm=bold
+hi link StructKeyword       Type
+hi StructKeyword        ctermfg=81 cterm=bold
 
 " }}}

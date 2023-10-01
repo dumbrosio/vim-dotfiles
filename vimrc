@@ -15,11 +15,8 @@
 " Enable mouse
 set mouse=a
 
-" Set default color scheme
+" Set default color scheme.
 colorscheme molokai
-
-" Turn syntax highlighting on.
-syntax enable
 
 " Set column limit
 set colorcolumn=80
@@ -53,9 +50,6 @@ set tabstop=4
 
 " Use space characters instead of tabs.
 "set expandtab
-
-" Do not save backup files.
-set nobackup
 
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
@@ -92,13 +86,24 @@ set history=1000
 set wildmenu
 
 " Make wildmenu behave like similar to Bash completion.
-" Turn syntax highlighting on.
-syntax enable
 set wildmode=list:longest
 
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" Turn syntax highlighting on.
+syntax enable
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " }}}
 

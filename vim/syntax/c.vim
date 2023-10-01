@@ -1,9 +1,4 @@
-" DEFAULT c.vim copy ------------------------------------------------------------ {{{
-
-" Vim syntax file
-" Language:	C
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last Change:	2019 Apr 23
+" This overwrite the default c.vim --------------------------------------------- {{{
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
@@ -25,7 +20,7 @@ endif
 
 " A bunch of useful C keywords
 syn keyword	cStatement	goto break return continue asm
-syn keyword	cLabel		case default
+syn keyword	cLabel		case default typedef
 syn keyword	cConditional	if else switch
 syn keyword	cRepeat		while for do
 
@@ -514,20 +509,32 @@ unlet s:cpo_save
 " }}}
 
 
-" CUSTOM RULES ------------------------------------------------------------ {{{
+" More customizations --------------------------------------------- {{{
 
 " Highlight Class and Function names
 syn match    cCustomParen    "?=(" contains=cParen,cCppParen
 syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
 syn match    cCustomScope    "::"
 syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
-
 hi def link cCustomFunc  Function
 hi def link cCustomClass Function
 
 " Set user-defined types same color as built-in types
-syn match    cCustomType     "\<\([A-Z][a-zA-Z_0-9]*\|t_[a-zA-Z_0-9]*\|\<[a-zA-Z_0-9]*_t\>\)\>"
+syn match    cCustomType     "\<t_[a-zA-Z_0-9]*\|[a-zA-Z_0-9]*_t\>\|\<[A-Z][a-z0-9]*"
+hi def link cCustomType  Type
 
-hi def link cCustomType  Type 
+" Highlight operators
+syn match cCustomRefOp "\(&\|->\|+\|-\|*\|/\|%\|==\|<\|>\|=\|\.\)\ze[^/]"
+hi def link cCustomRefOp Statement
+
+" Highlight typedef keyword
+syn keyword TypeDefKeyword typedef
+
+" Highlight structured types
+syn keyword EnumKeyword enum
+syn keyword ArrayKeyword array
+syn keyword UnionKeyword union
+syn keyword StructKeyword struct
 
 " }}}
+
