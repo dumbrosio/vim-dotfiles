@@ -132,10 +132,9 @@ let g:mail42 = 'vd-ambro@student.42.it'
 call plug#begin('~/.vim/plugged')
 
 "Plug 'dense-analysis/ale'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'alexandregv/norminette-vim'
 Plug 'preservim/nerdtree'
-Plug 'preservim/nerdtree'
-Plug 'vim-syntastic/syntastic'
-Plug 'alexandregv/norminette-vim'
 
 call plug#end()
 
